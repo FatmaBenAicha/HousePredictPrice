@@ -1,5 +1,11 @@
-#  House_Price_Prediction
+#  House Price Prediction
 
- let's run the app locally. In your terminal, at the root of flaskscript.py , start the application: 
+ to run the app locally. Open your terminal, at the root of flaskscript.py , start the application: 
  
  python flaskscript.py
+
+
+##  Requirement 
+
+flask installed
+numpy installed 
