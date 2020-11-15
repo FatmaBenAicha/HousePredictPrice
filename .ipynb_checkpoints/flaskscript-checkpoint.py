@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
-with open('models/LinearRegression.pkl', 'rb') as f:
+with open('models/BaggingRegressor.pkl', 'rb') as f:
     model = pickle.load(f)
 
 app = Flask(__name__)

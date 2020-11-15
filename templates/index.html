@@ -9,7 +9,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>Eforlad travel</title>
+   <title>House Price Pridection</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -95,7 +95,7 @@
                <h1>House<br><strong class="white">Price Prediction</strong></h1>
                <div class="button_section"> <a class="main_bt" href="#">Read More</a> </div>
                <div class="container">
-                  <form class="main-form" method="POST" , action="{{url_for('home')}}">
+                  <form class="main-form" method="POST" action="{{url_for('home')}}" >
                      <h3>Predict Your House Price</h3>
                      <div class="row">
                         <div class="col-md-9">
@@ -103,75 +103,68 @@
 
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Longitude</label>
-                                 <input class="form-control" name="input-1" type="text" placeholder="longitude" required
+                                 <input class="form-control" name="longitude" type="text" placeholder="longitude" required
                                     autofocus />
-
                               </div>
-
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Latitude</label>
-                                 <input class="form-control" name="input-2" type="text" placeholder="latitude"
+                                 <input class="form-control" name="latitude" type="text" placeholder="latitude"
                                     required />
                               </div>
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Housing Median Age</label>
-                                 <input class="form-control" name="input-3" type="text" placeholder="housing median age"
+                                 <input class="form-control" name="housing_median_age" type="text" placeholder="housing median age"
                                     required />
                               </div>
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Total Rooms Number</label>
-                                 <input class="form-control" name="input-4" type="text" placeholder="total rooms number"
+                                 <input class="form-control" name="total_rooms" type="text" placeholder="total rooms number"
                                     required autofocus />
                               </div>
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Total Bedrooms</label>
-                                 <input class="form-control" name="input-5" type="text" placeholder="total bedrooms"
+                                 <input class="form-control" name="total_bedrooms" type="text" placeholder="total bedrooms"
                                     required />
                               </div>
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Population</label>
-                                 <input class="form-control" name="input-6" type="text" placeholder="population"
+                                 <input class="form-control" name="population" type="text" placeholder="population"
                                     required />
                               </div>
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Households</label>
-                                 <input class="form-control" name="input-7" type="text" placeholder="households"
+                                 <input class="form-control" name="households" type="text" placeholder="households"
                                     required />
                               </div>
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Median Income</label>
-                                 <input class="form-control" name="input-8" type="text" placeholder="median income"
+                                 <input class="form-control" name="median_income" type="text" placeholder="median income"
                                     required />
                               </div>
                               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                  <label>Ocean proximity:</label>
-                                 <select class="form-control" name="Any">
-                                    <option>Any</option>
-                                    <option id="input-11" name="input-11" value="1">NEAR BAY</option>
-                                    <option id="input-12" name="input-11" value="2">INLAND</option>
-                                    <option id="input-13" name="input-11" value="3">1H OCEAN</option>
-                                    <option id="input-14" name="input-11" value="4">NEAR OCEAN</option>
-                                    <option id="input-15" name="input-11" value="5">ISLAND</option>
+                                 <select class="form-control" name="ocean_proximity">
+                                    <option  value="1">NEAR BAY</option>
+                                    <option  value="2">INLAND</option>
+                                    <option  value="3">1H OCEAN</option>
+                                    <option  value="4">NEAR OCEAN</option>
+                                    <option  value="5">ISLAND</option>
                                  </select>
-                              </div>
-                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                 <label>Bedrooms Per Room</label>
-                                 <input class="form-control" name="input-9" type="text" placeholder="bedrooms per room"
-                                    required />
-                              </div>
-                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                 <label>Population Per Household</label>
-                                 <input class="form-control" name="input-10" type="text"
-                                    placeholder="population per household" required />
                               </div>
                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-
-                           <button type="submit"><a href="#">Predict your house price</a></button>
+                           <!--
+                           <button type="submit"><a href="#"></a>Predict your house price</a></button>
+                           -->
+                           <button type="submit"><a>Predict Price</a></button>
                         </div>
                      </div>
+                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                        <label >House Price Prediction :  {{ prediction_text }} </label>
+                     </div>
                   </form>
+                  
                </div>
             </div>
          </div>

@@ -13,35 +13,35 @@ def main():
 
 @app.route('/',methods=['POST'])
 def home():
-    longitude = float(request.form['input-1'])
-    latitude =  float(request.form['input-2'])
-    housing_median_age =  float(request.form['input-3'])
-    total_room =  float(request.form['input-4'])
-    total_bedrooms =  float(request.form['input-5'])
-    population =  float(request.form['input-6'])
-    households =  float(request.form['input-7'])
-    median_income =  float(request.form['input-8'])
-    bedrooms_per_room = float(request.form['input-9'])
-    population_per_household =  float(request.form['input-10'])
-    if ( (request.form['input-11']) == 1 ):
+    longitude = float(request.form['longitude'])
+    latitude =  float(request.form['latitude'])
+    housing_median_age =  float(request.form['housing_median_age'])
+    total_room =  float(request.form['total_rooms'])
+    total_bedrooms =  float(request.form['total_bedrooms'])
+    population =  float(request.form['population'])
+    households =  float(request.form['households'])
+    median_income =  float(request.form['median_income'])
+    bedrooms_per_room = (total_bedrooms)/ (total_rooms)
+    population_per_household = (population)/ (households)
+    if ( (request.form['ocean_proximity']) == 1 ):
         ocean_proximity1 =  1.0
         ocean_proximity2 =  0.0
         ocean_proximity3 =  0.0
         ocean_proximity4 =  0.0
         ocean_proximity5 =  0.0
-    elif ((request.form['input-11']) == 2):
+    elif ((request.form['ocean_proximity']) == 2):
         ocean_proximity1 =  0.0
         ocean_proximity2 =  1.0
         ocean_proximity3 =  0.0
         ocean_proximity4 =  0.0
         ocean_proximity5 =  0.0
-    elif ((request.form['input-11']) == 3):
+    elif ((request.form['ocean_proximity']) == 3):
         ocean_proximity1 =  0.0
         ocean_proximity2 =  0.0
         ocean_proximity3 =  1.0
         ocean_proximity4 =  0.0
         ocean_proximity5 =  0.0
-    elif ((request.form['input-11']) == 4):
+    elif ((request.form['ocean_proximity']) == 4):
         ocean_proximity1 =  0.0
         ocean_proximity2 =  0.0
         ocean_proximity3 =  0.0
@@ -61,6 +61,6 @@ def home():
     pred = model.predict(arr)
 
     data = round(pred[0], 2)
-    return render_template('after.html', prediction_text='$ {}'.format(data))
+    return render_template('index.html', prediction_text='$ {}'.format(data))
 if __name__ == "__main__":
     app.run()
